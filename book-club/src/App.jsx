@@ -15,15 +15,16 @@ const App = () => {
     const fetchData = async () => {
 
       try {
-      const res = await fetch("https://book-club-jason.herokuapp.com/books")
+      const res = await fetch("https://book-club-json.herokuapp.com/books")
       console.log("what we got back:", res)
 
      
         const books = await res.json()
         console.log("our json-ified res", books)
         setBooks(books)
-      } catch (erros) {
+      } catch (errors) {
         console.log(errors)
+        console.log("error message")
       }
     }
     fetchData()
